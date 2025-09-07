@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoQR - Futuristic QR Generator</title>
+    <title>Titan Business Pros - QR Generator</title>
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
     <style>
         :root {
@@ -205,6 +205,11 @@
             transform: translateY(-2px);
         }
         
+        .contact-btn {
+            background: linear-gradient(45deg, var(--accent), var(--secondary));
+            margin-top: 1rem;
+        }
+        
         .output-section {
             display: flex;
             flex-direction: column;
@@ -301,6 +306,14 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
+            width: 100%;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
         
         @keyframes pulse {
@@ -342,7 +355,7 @@
     <div class="grid-lines"></div>
     <div class="container">
         <header>
-            <h1>NeoQR</h1>
+            <h1>Titan Business Pros</h1>
             <p class="subtitle">Generate futuristic QR codes in seconds</p>
         </header>
         
@@ -418,7 +431,10 @@
     </div>
     
     <footer>
-        <p>© 2023 NeoQR Generator | Futuristic QR Code Technology</p>
+        <div class="footer-content">
+            <a href="https://titanbusinesspros.github.io/MooreOklahoma/" class="btn contact-btn">Contact Us</a>
+            <p>© 2025 Titan Business Pros LLC 405-998-7979</p>
+        </div>
     </footer>
 
     <script>
@@ -558,7 +574,7 @@
                 }
                 
                 const link = document.createElement('a');
-                link.download = 'neoqr.png';
+                link.download = 'titanqr.png';
                 link.href = currentQRCode.toDataURL('image/png');
                 link.click();
             });
@@ -575,10 +591,10 @@
                         const dataUrl = currentQRCode.toDataURL('image/png');
                         const response = await fetch(dataUrl);
                         const blob = await response.blob();
-                        const file = new File([blob], 'neoqr.png', { type: 'image/png' });
+                        const file = new File([blob], 'titanqr.png', { type: 'image/png' });
                         
                         await navigator.share({
-                            title: 'NeoQR Code',
+                            title: 'Titan Business Pros QR Code',
                             text: 'Check out this futuristic QR code I created!',
                             files: [file]
                         });
